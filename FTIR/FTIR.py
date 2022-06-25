@@ -3,7 +3,7 @@ import numpy as np
 import pandas as pd
 #import math
 #import decimal
-#from sigfig import round as rnd
+from sigfig import round as rnd
 
 """ reduced_mass: Function to calculate the reduced mass of two nuclei, with errors."""
 
