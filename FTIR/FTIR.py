@@ -1,6 +1,7 @@
 """Script for functions used in the analysis for the FTIR experiment in the atomic and molecular lab course"""
 import numpy as np
 import pandas as pd
+import pandas.io
 #import math
 #import decimal
 from sigfig import round as rnd
@@ -48,3 +49,24 @@ def bond_length(I, dI, mu, dmu):
         + ((dmu * np.sqrt(I)) / (2 * mu ** (1.5))) ** 2
     )
     return r, dr
+
+"""Formatting functions for the latex table"""
+
+#func1 sets precision to 8dp
+def formfunc1(string):
+    floater=np.float(string)
+    new_string=str(round(floater,8))
+    return new_string
+
+#func2 sets precision to 4dp
+def formfunc2(string):
+    floater=np.float(string)
+    new_string=str(round(floater,4))
+    return new_string
+
+    #"\\num{{{0:.2g}}}".format(1e9)
+
+def formfunc3(string):
+    floater=np.float(string)
+    new_string="\\num{{{0:.4g}}}".format(floater)
+    return new_string
